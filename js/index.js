@@ -13,7 +13,7 @@ function changeBG() {
     colors[randomIntegerFromInterval(0, colors.length - 1)]
 }
 
-function changeEnableStartButton(btn) {
+function changeEnableButton(btn) {
   btn.classList.contains('disabled')
     ? btn.removeAttribute('disabled')
     : btn.setAttribute('disabled', true)
@@ -22,14 +22,14 @@ function changeEnableStartButton(btn) {
 
 function onStartInterval(e) {
   intervalId = setInterval(changeBG, 1000)
-  changeEnableStartButton(btnStopRef)
-  changeEnableStartButton(btnStartRef)
+  changeEnableButton(btnStopRef)
+  changeEnableButton(btnStartRef)
 }
 
 function onStopInterval() {
   clearInterval(intervalId)
-  changeEnableStartButton(btnStopRef)
-  changeEnableStartButton(btnStartRef)
+  changeEnableButton(btnStopRef)
+  changeEnableButton(btnStartRef)
 }
 
 btnStopRef.classList.add('disabled')
